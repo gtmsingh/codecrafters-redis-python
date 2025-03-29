@@ -13,9 +13,9 @@ def main():
         # If the reuse port is not supported
         server_socket = socket.create_server(("localhost", 6379))
 
-    connection, _ = server_socket.accept()  # wait for client
+    conn, _ = server_socket.accept()  # wait for client
 
-    connection.sendAll(b"+PONG\r\n")  # send a PONG response
+    conn.sendall(b"+PONG\r\n")  # send a PONG response
 
 
 if __name__ == "__main__":
